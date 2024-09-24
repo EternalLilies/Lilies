@@ -4,8 +4,6 @@ int main(){
 	printf("请输入两个整数：\n");
 	scanf("%d %d",&a,&b);
 	m=a,n=b;
-	if (a<b)
-		c=b,b=a,a=c;
 	p=a%b;
 	while(p!=0)
 		{
