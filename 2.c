@@ -22,7 +22,7 @@ int main(){
 	unsigned long long p=combination(n+m,n);
 	unsigned long long q,p1,p2,p3,p4,p5,p6,p7,p8,p9,p0;
 	if((a<3&&b<3)||(a>n-3&&b>m-3)){
-		q=0;
+		q=combination((a+b-3),(a-3))*combination((n+m-a-b-3),n-a)+combination((a+b-3),a)*combination((n+m-a-b-3),(n-a-3));
 	}
 	else{
 		p1=combination((a+b-3),(a-2))*combination((n+m-a-b+3),(n-a+2));
