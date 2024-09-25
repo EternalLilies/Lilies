@@ -25,16 +25,16 @@ int main(){
 	p2=combination((n+m-a-b-3),(n-a-3));
 	p3=combination((a+b-3),(a-3));
 	p4=combination((a+b-3),a);
-	if((a==2&&b==2)||(a==n-2&&b==m-2)||(a==0&&b==0)||(a==n&&b==m)||(a*b==2)||(a==n-1&&b==m-2)||(a==n-2&&b==m-1)){
+	if((a==2&&b==2)||(a==n-2&&b==m-2)||(a==0&&b==0)||(a==n&&b==m)||(a*b==2)||(a==n-1&&b==m-2)||(a==n-2&&b==m-1)||(a==n+1&&b==m+1)){
 		q=0;
 	}
 	if((a==1&&b==1)||(a==n-1&&b==m-1)){
 		q=p1+p2+p3+p4;
 	}
-	if((a==1&&b==0)||(a==2&&b==0)||(a==n-1&&b==m)||(a==n-2&&b==m)){
+	if((a==1&&b==0)||(a==2&&b==0)||((a==n-1||a==n-2||a==n+1||a==n+2)&&b==m)||(a==n-1&&b==m+1)){
 		q=p1+p4;
 	}
-	if((a==0&&b==2)||(a==0&&b==1)||(a==n&&b==m-2)||(a==n&&b==m-1)){
+	if((a==0&&b==2)||(a==0&&b==1)||(a==n&&(b==m-2||b==m-1||b==m+1||b==m+2))||(a==n+1&&b==m-1)){
 		q=p2+p3;
 	}
 	if((a>2||b>2)&&(a<n-2||b<m-2)){
@@ -49,6 +49,9 @@ int main(){
 		p9=combination((a+b-3),(a-3))*combination((n+m-a-b-3),n-a);
 		p0=combination((a+b-3),a)*combination((n+m-a-b-3),(n-a-3));
 		q=p-p1-p2-p3-p4-p5-p6-p7-p8+p9+p0;
+	}
+	if(a>n+2||b>m+2||(a==n+2&&b==m+2)){
+		q=p;
 	}
 	printf("%llu\n",q);
 	return 0;
