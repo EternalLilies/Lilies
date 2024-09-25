@@ -20,12 +20,11 @@ int main(){
 	int a,b,m,n;
 	scanf("%d %d %d %d",&n,&m,&a,&b);
 	unsigned long long p=combination(n+m,n);
-	unsigned long long q,p1,p2,p3,p4,p5,p6,p7,p8,y;
-	y=combination(1,-1);
+	unsigned long long q,p1,p2,p3,p4,p5,p6,p7,p8;
 	if((a<3&&b<3)||(a>n-3&&b>m-3)){
 		q=0;
 	}
-	if(a>2&&b>2&&a<n-2&&b<m-2){
+	else{
 		p1=combination((a+b-3),(a-2))*combination((n+m-a-b+3),(n-a+2));
 		p2=combination((a+b-3),(a-1))*combination((n+m-a-b+3),(n-a+1));
 		p3=combination((a+b-3),(a-3))*combination((n+m-a-b+2),(n-a+2));
@@ -36,6 +35,6 @@ int main(){
 		p8=combination((a+b-1),(a+2))*combination((n+m-a-b-1),(n-a-2));
 		q=p-p1-p2-p3-p4-p5-p6-p7-p8;
 	}
-	printf("%llu %llu %llu %llu %llu %llu %llu %llu %llu %llu %llu\n",q,p,p1,p2,p3,p4,p5,p6,p7,p8,y);
+	printf("%llu\n",q);
 	return 0;
 }
