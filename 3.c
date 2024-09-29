@@ -13,7 +13,6 @@ int main(){
 	if(a6<=b)i++;
 	if(a7<=b)i++;
 	if(a8<=b)i++;
-	if(a8<=b)i++;
 	if(a9<=b)i++;
 	if(a0<=b)i++;
 	printf("%d\n",i);
