@@ -4,6 +4,7 @@ int main(){
 	scanf("%d %d %d %d %d %d %d %d %d %d\n",&a1,&a2,&a3,&a4,&a5,&a6,&a7,&a8,&a9,&a0);
 	scanf("%d",&b);
 	i=1;
+	b=b+30;
 	if(a1<=b)i++;
 	if(a2<=b)i++;
 	if(a3<=b)i++;
