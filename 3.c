@@ -1,8 +1,8 @@
 #include <stdio.h>
 int main(){
-	int a1,a2,a3,a4,a5,a6,a7,a8,a9,a0,b,i;
-	scanf("%d %d %d %d %d %d %d %d %d %d\n",&a1,&a2,&a3,&a4,&a5,&a6,&a7,&a8,&a9,&a0);
-	scanf("%d",&b);
+	long long int a1,a2,a3,a4,a5,a6,a7,a8,a9,a0,b,i;
+	scanf("%lld %lld %lld %lld %lld %lld %lld %lld %lld %lld\n",&a1,&a2,&a3,&a4,&a5,&a6,&a7,&a8,&a9,&a0);
+	scanf("%lld",&b);
 	i=0;
 	b=b+30;
 	if(a1<=b)i++;
@@ -16,6 +16,6 @@ int main(){
 	if(a8<=b)i++;
 	if(a9<=b)i++;
 	if(a0<=b)i++;
-	printf("%d",i);
+	printf("%lld\n",i);
 	return 0;
 }
