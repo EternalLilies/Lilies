@@ -6,6 +6,7 @@ int main(){
 		scanf("%d",&j[i]);
 	}
 	a=0;
+	b=0;
 	for(i=0;;i++){
 		a=a+300;
 		a=a-j[i];
@@ -13,7 +14,7 @@ int main(){
 			printf("-%d",i+1);
 			break;
 		}
-		b=a/100;
+		b=b+a/100;
 		a=a%100;
 		if(i==11){
 			printf("%d",a+120*b);
