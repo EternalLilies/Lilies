@@ -16,7 +16,7 @@ int main(){
 		b=a/100;
 		a=a%100;
 		if(i==11){
-			printf("%d",a+100*b);
+			printf("%d",a+120*b);
 			break;
 		}
 	}
