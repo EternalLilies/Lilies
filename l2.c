@@ -4,40 +4,45 @@ int find(int p,int q);
 int main()
 {
 	char A[1000100];
-	int i,m,j=0,n=0,t=0;
-	int a[110];
+	int i,m,j,n,t=0;
+	int s[110]={0};
 	scanf("%d",&m);
-	for(i=0;i<m;i++)
+	for(i=0;i<=m;i++)
 	{
 		fgets(A,sizeof(A),stdin);
-		for(;A[j]=='\n';)
+		j=0;
+		for(;j<=strlen(A);)
 		{
-			for(;A[j]<='9'&&A[j]>='0';)
+			for(n=0;(A[j]<='9'&&A[j]>='0')&&A[j]!='\n';j++)
 			{
-				n=n*10+A[j];
-				j++;
+				n=n*10+A[j]-'0';
+				if(A[j+1]==32||A[j+1]=='\n')
+				{
+					s[t]=n;
+					t++;
+				}
 			}
-			a[t]=n;
-			t++;
+			j++;
 		}
 	}
 	int min,max;
-	for(i=0;a[i]!=0;i++)
+	max=min=s[0];
+	for(i=1;s[i]!=0;i++)
 	{
-		min=max=a[i];
-		if(a[i]>max)max=a[i];
-		if(a[i]<min)min=a[i];
+		if(s[i]>max)max=s[i];
+		if(s[i]<min)min=s[i];
 	}
 	for(min++;min<max;min++)
 	{
-		for(i=0;a[i]!=0;i++)
+		j=0;
+		for(i=0;s[i]!=0;i++)
 		{
-			j+=find(min,a[i]);
+			j+=find(min,s[i]);
 		}
 		if(j==0)printf("%d ",min);
 		if(j==2)t=min;
 	}
-	printf("%d",t);
+	printf("%d\n",t);
 	return 0;
 }
 
