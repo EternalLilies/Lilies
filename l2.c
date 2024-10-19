@@ -7,7 +7,8 @@ int main()
 	int i,m,j,n,t=0;
 	int s[110]={0};
 	scanf("%d",&m);
-	for(i=0;i<=m;i++)
+	getchar();
+	for(i=0;i<m;i++)
 	{
 		fgets(A,sizeof(A),stdin);
 		j=0;
