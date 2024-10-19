@@ -26,7 +26,7 @@ int main()
 			j++;
 		}
 	}
-	int min,max;
+	int min,max,a;
 	max=min=s[0];
 	for(i=1;s[i]!=0;i++)
 	{
@@ -40,10 +40,10 @@ int main()
 		{
 			j+=find(min,s[i]);
 		}
-		if(j==0)printf("%d ",min);
+		if(j==0)a=min;
 		if(j==2)t=min;
 	}
-	printf("%d\n",t);
+	printf("%d %d\n",a,t);
 	return 0;
 }
 
