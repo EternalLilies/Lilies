@@ -1,9 +1,9 @@
 package homework2;
 
 public class MyTime {
-    private int hour;
-    private int minute;
-    private int second;
+    protected int hour;
+    protected int minute;
+    protected int second;
 
     public MyTime(int hour, int minute, int second) {
 /*        if (hour < 0 || hour >= 24) {
@@ -78,5 +78,17 @@ public class MyTime {
         if (second == 0) {
             incrementMinute();
         }
+    }
+
+    public int getHour() {
+        return hour;
+    }
+
+    public int getMinute() {
+        return minute;
+    }
+
+    public int getSecond() {
+        return second;
     }
 }

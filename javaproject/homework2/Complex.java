@@ -3,8 +3,15 @@ package homework2;
 public class Complex {
     private double real;
     private double imag;
+    private static final double EPSILON = 1e-8;
 
     public Complex(double real, double imag) {
+        if(Double.isNaN(real) || Double.isNaN(imag)) {
+            throw new IllegalArgumentException("Invalid complex number: " + real + " + " + imag + "i");
+        }
+        if(Double.isInfinite(real) || Double.isInfinite(imag)) {
+            throw new IllegalArgumentException("Invalid complex number: " + real + " + " + imag + "i");
+        }
         this.real = real;
         this.imag = imag;
     }
@@ -18,6 +25,12 @@ public class Complex {
     }
 
     public void setReal(double real) {
+        if(Double.isNaN(real)) {
+            throw new IllegalArgumentException("Invalid real part: " + real);
+        }
+        if(Double.isInfinite(real)) {
+            throw new IllegalArgumentException("Invalid real part: " + real);
+        }
         this.real = real;
     }
 
@@ -26,16 +39,37 @@ public class Complex {
     }
 
     public void setImag(double imag) {
+        if(Double.isNaN(imag)) {
+            throw new IllegalArgumentException("Invalid imaginary part: " + imag);
+        }
+        if(Double.isInfinite(imag)) {
+            throw new IllegalArgumentException("Invalid imaginary part: " + imag);
+        }
         this.imag = imag;
     }
 
     public void setValue(double real, double imag) {
+        if(Double.isNaN(real) || Double.isNaN(imag)) {
+            throw new IllegalArgumentException("Invalid complex number: " + real + " + " + imag + "i");
+        }
+        if(Double.isInfinite(real) || Double.isInfinite(imag)) {
+            throw new IllegalArgumentException("Invalid complex number: " + real + " + " + imag + "i");
+        }
         this.real = real;
         this.imag = imag;
     }
 
     public String toString() {
-        return real + (imag >= 0 ? "+" : "-") + imag + "i";
+        if(imag == 0) {
+            return String.valueOf(real);
+        }
+        if(real == 0) {
+            return imag + "i";
+        }
+        if(imag < 0) {
+            return real + " - " + (-imag) + "i";
+        }
+        return real + " + " + imag + "i";
     }
 
     public boolean isReal() {
@@ -47,7 +81,14 @@ public class Complex {
     }
 
     public boolean equals(double real, double imag) {
-        return this.real == real && this.imag == imag;
+        if(Double.isNaN(real) || Double.isNaN(imag)) {
+            throw new IllegalArgumentException("Invalid complex number: " + real + " + " + imag + "i");
+        }
+        if(Double.isInfinite(real) || Double.isInfinite(imag)) {
+            throw new IllegalArgumentException("Invalid complex number: " + real + " + " + imag + "i");
+        }
+        return this.real - real < EPSILON && this.real - real > -EPSILON
+                && this.imag - imag < EPSILON && this.imag - imag > -EPSILON;
     }
 
     public boolean equals(Complex other) {
@@ -80,5 +121,4 @@ public class Complex {
         Complex numerator = this.multiply(multiComplex);
         return new Complex(numerator.real / denominator, numerator.imag / denominator);
     }
-
 }

@@ -5,12 +5,13 @@ public class TestComplex {
         Complex c1 = new Complex();
         Complex c2 = new Complex(1.0, 1.2);
         Complex c3 = new Complex(1, 0);
-        Complex c4 = new Complex(0, 1.1);
+        Complex c4 = new Complex(0, -1.1);
         Complex c5 = new Complex(1, 1.2);
         System.out.println(c1);
         System.out.println(c2);
         System.out.println(c3);
         System.out.println(c4);
+        System.out.println(c5);
         System.out.println(c2.getReal()+" "+c2.getImag());
         c2.setReal(2.0);
         c2.setImag(2.2);

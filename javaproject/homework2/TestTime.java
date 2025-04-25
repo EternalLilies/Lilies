@@ -29,7 +29,6 @@ public class TestTime {
         System.out.printf("    %s\n", t5.toUniversalString());
         System.out.printf("    %s\n", t5.toString());
 
-        // 构建t6对象的参数值不在合理范围内，请输出这类错误信息。
         MyTime t6 = new MyTime(15, 74, 99);
         System.out.println("t6: invalid values");
         System.out.printf("%s\n", t6.toUniversalString());

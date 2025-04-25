@@ -1,7 +1,7 @@
 package homework2;
 import java.time.LocalDateTime;
 
-public class TextClock {
+public class TestClock {
     public static void main(String[] args) throws InterruptedException {
         // 使用Java的LocalTime获取当前系统的时间
         LocalDateTime currentTime = LocalDateTime.now();
